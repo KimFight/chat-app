@@ -7,4 +7,5 @@ Rails.application.routes.draw do
    
     resources :users, only: [:edit, :update]
     #resources :●●と書くのみで複数のルーティングが定義される。
+    resources :rooms, only: [:new, :create]
   end
