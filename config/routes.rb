@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
   
   devise_for :users
-    root to: "messages#index"
-    # root 'コントローラー#アクション'はトップページにアクセスしたときのルーティングを
-    # MessagesController の index アクションに設定するという意。
-   
+    root  to: "rooms#index"
+    # root to: 'コントローラー#アクション'はトップページにアクセスしたときのルーティング
+    
     resources :users, only: [:edit, :update]
     #resources :●●と書くのみで複数のルーティングが定義される。
     resources :rooms, only: [:new, :create]
