@@ -1,5 +1,7 @@
 <div class='chat-room-form'>
   <h1>新規チャットルーム</h1>
+
+  <!--  @room(空のインスタンス)はroom_controllse.rbで定義 -->
   <%=form_with model: @room, local: true do |f|%>
     <div class='chat-room-form__field'>
       <div class='chat-room-form__field--left'>
