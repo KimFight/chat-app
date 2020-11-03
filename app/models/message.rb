@@ -7,7 +7,14 @@ class Message < ApplicationRecord
   # message.image で添付ファイルにアクセスできるようになった。
 
 
-  validates :content, presence: true
-  # validates はモデルに記述。
+  validates :content, presence: true, unless: :was_attached?
+  # validates はモデルに記述
+  # unless: :was_attached? メソッドの返り値がfalseならばバリデーションする
+
+
+  def was_attached?
+    self.image.attached?
+    # self.image.attached? 画像があればtrue、なければfalseを返す仕組み
+  end
 
 end

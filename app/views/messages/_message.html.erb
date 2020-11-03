@@ -15,5 +15,7 @@
       <%= message.content %>
     </div>
     <%= image_tag message.image. variant(resize: '500x500'), class: 'message-image' if message.image.attached? %>
+    <!-- variant(resize: '500x500') ファイルの表示サイズを指定-->
+    <!-- if message.image.attached? 画像が存在する場合のみimage_tagが読み込まれる -->
   </div>
 </div>
