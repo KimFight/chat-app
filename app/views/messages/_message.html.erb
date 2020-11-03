@@ -4,8 +4,9 @@
       <%= message.user.name %>
     </div>
 
-    <div class="message-date">    
-      <%= message.created_at %>
+    <div class="message-date">
+    <!--「lメソッド」で日本時刻を出力-->    
+      <%= l message.created_at %>
     </div>
   </div>
 
