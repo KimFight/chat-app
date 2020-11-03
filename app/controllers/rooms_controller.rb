@@ -17,6 +17,16 @@ class RoomsController < ApplicationController
     end
   end
 
+  def destroy
+    room = Room.find(params[:id])
+    room.destroy
+    redirect_to root_path
+    # はじめに routes.rb の「resource :rooms,only:[]」に「destroy」追加した？
+    # 削除後にルートパスへの移動もここで指定。
+    # ビューでの表示には使わないので、ローカル変数のまま
+  end
+
+
   private
 
   def room_params
